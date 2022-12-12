@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM python:3.9.2
 
 WORKDIR python-docker
@@ -10,4 +8,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+EXPOSE 80
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=80"]
