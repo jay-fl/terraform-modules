@@ -34,4 +34,4 @@ jobs:
        run: |
          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
-         aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition $TASK_NAME --region us-east-1 --force-new-deployment
+         aws ecs update-service --cluster myapp-cluster --service myapp-service --task-definition myapp-task --region us-east-1 --force-new-deployment
